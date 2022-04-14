@@ -69,14 +69,17 @@ def baris_game():
     return(baris)
 
 def list_game():
-    count = 0
-    for i in range(baris_game()):
-        if jumlah_game_id() == count:
-            break
-        for j in range(1):
-            if data_game_csv[i][j] == sort_game_id()[count]:
-                print(data_game_csv[i][0], '|' , data_game_csv[i][1], '|',data_game_csv[i][2], '|' , data_game_csv[i][3], '|', data_game_csv[i][4])
-                count +=1
+    if baris_riwayat() == 1:
+        print("Maaf, kamu belum memiliki game. Ketik perintah beli_game untuk beli")
+    else:
+        count = 0
+        for i in range(baris_game()):
+            if jumlah_game_id() == count:
+                break
+            for j in range(1):
+                if data_game_csv[i][j] == sort_game_id()[count]:
+                    print(data_game_csv[i][0], '|' , data_game_csv[i][1], '|',data_game_csv[i][2], '|' , data_game_csv[i][3], '|', data_game_csv[i][4])
+                    count +=1
     return
                 
         
