@@ -47,22 +47,25 @@ def tambah_game():
     id_number = ''
     Terminated = False
     i = 0
-    while(not(Terminated)):
-        # Misal G001 -> Dipisah menjadi G00 dan 1
-        if id_game[i] == "G" or id_game[i] == "0":
-            id_kode += id_game[i]
-            i +=1
-        else:
-            id_number = id_game[i:]
-            Terminated = True
-    if id_number== "9" or id_number =="99":
-        # G009 -> G010
-        # G099 -> G100
-        for j in range(i-1):
-            id_kode_new += id_kode[j]
-            id = id_kode_new + str(int(id_number)+1)
+    if id_game == 'game_id':
+        id = 'G001'
     else:
-        id = id_kode + str(int(id_number)+1)
+        while(not(Terminated)):
+            # Misal G001 -> Dipisah menjadi G00 dan 1
+            if id_game[i] == "G" or id_game[i] == "0":
+                id_kode += id_game[i]
+                i +=1
+            else:
+                id_number = id_game[i:]
+                Terminated = True
+        if id_number== "9" or id_number =="99":
+            # G009 -> G010
+            # G099 -> G100
+            for j in range(i-1):
+                id_kode_new += id_kode[j]
+                id = id_kode_new + str(int(id_number)+1)
+        else:
+            id = id_kode + str(int(id_number)+1)
     T = [id,nama,kategori,tahun,harga,stok_awal]
     return(T)
 
