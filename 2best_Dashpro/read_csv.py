@@ -42,10 +42,3 @@ def read_csv(x):
     except IOError:
         pesan = (f'Maaf file {x} tidak ada')
         return(pesan)
-
-
-# Program buat nyobain fungsinya jalan apa enggak
-x = input() #Masukkan nama file
-print(f"Berikut merupakan data dari file {x}")
-print()
-print(read_csv(x))
