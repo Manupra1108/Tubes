@@ -48,6 +48,7 @@ def tambah_game():
     Terminated = False
     i = 0
     if id_game == 'game_id':
+        # di dalam data_game_csv belum terdapat game
         id = 'G001'
     else:
         while(not(Terminated)):
